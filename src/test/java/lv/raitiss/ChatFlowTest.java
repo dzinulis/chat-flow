@@ -129,7 +129,22 @@ class ChatFlowTest {
                 case INPUT -> {
                     String errorMessage = chatFlow.getInstruction().getErrorMessage();
 
-                    chatFlow.enterInput("--&'^5");
+                    chatFlow.enterInput("$");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput("{");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput("}");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput("&");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput("#");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput("*");
                     assertEquals(errorMessage, chatFlow.readMessage());
 
                     chatFlow.enterInput("***${}Johnny");
