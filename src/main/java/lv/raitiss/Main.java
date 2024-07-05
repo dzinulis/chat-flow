@@ -8,6 +8,7 @@ public class Main {
         ChatFlow chatFlow = new ChatFlow("./src/main/resources/instructions_example.json");
         ChatFlowTerminalRunner terminalRunner = new ChatFlowTerminalRunner(chatFlow);
         terminalRunner.run();
+        System.out.println("\nVariables from the conversation:");
         System.out.println(chatFlow.getUserVariables());
     }
 }
