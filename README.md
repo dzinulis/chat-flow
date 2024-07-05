@@ -1,3 +1,5 @@
+# Jeff App backend task
+
 ## Overview
 
 The repository contains a code for creating decision tree based chat flows. The ```Main``` class contains example usage of the ```ChatFlow``` class in the terminal, using the decision tree found in ```./src/main/resources/instructions_example.json```.
