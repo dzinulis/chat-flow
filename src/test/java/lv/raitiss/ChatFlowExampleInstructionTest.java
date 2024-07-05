@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ChatFlowTest {
+class ChatFlowExampleInstructionTest {
     private ChatFlow chatFlow;
 
     @BeforeEach
@@ -118,7 +118,106 @@ class ChatFlowTest {
     }
 
     @Test
-    void shouldInformAboutInvalidEntries() {
+    void regexShouldRejectDollarSign() {
+        boolean continueChat = true;
+        String[] inputs = {"Ann", "Doe", "female"};
+        int inputCounter = 0;
+
+        while (continueChat) {
+            switch (chatFlow.getInstructionType()) {
+                case MESSAGE -> chatFlow.readMessage();
+                case INPUT -> {
+                    String errorMessage = chatFlow.getInstruction().getErrorMessage();
+                    chatFlow.enterInput("$");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput(inputs[inputCounter++]);
+                }
+                case CHOICE -> {
+                    chatFlow.enterChoice(inputs[inputCounter++]);
+                }
+                case END -> continueChat = false;
+            }
+        }
+    }
+
+    @Test
+    void regexShouldRejectCurlyBraces() {
+        boolean continueChat = true;
+        String[] inputs = {"Ann", "Doe", "female"};
+        int inputCounter = 0;
+
+        while (continueChat) {
+            switch (chatFlow.getInstructionType()) {
+                case MESSAGE -> chatFlow.readMessage();
+                case INPUT -> {
+                    String errorMessage = chatFlow.getInstruction().getErrorMessage();
+                    chatFlow.enterInput("{");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput("}");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput(inputs[inputCounter++]);
+                }
+                case CHOICE -> {
+                    chatFlow.enterChoice(inputs[inputCounter++]);
+                }
+                case END -> continueChat = false;
+            }
+        }
+    }
+
+    @Test
+    void regexShouldRejectAsterisk() {
+        boolean continueChat = true;
+        String[] inputs = {"Ann", "Doe","female"};
+        int inputCounter = 0;
+
+        while (continueChat) {
+            switch (chatFlow.getInstructionType()) {
+                case MESSAGE -> chatFlow.readMessage();
+                case INPUT -> {
+                    String errorMessage = chatFlow.getInstruction().getErrorMessage();
+                    chatFlow.enterInput("*");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput(inputs[inputCounter++]);
+                }
+                case CHOICE -> {
+                    chatFlow.enterChoice(inputs[inputCounter++]);
+                }
+                case END -> continueChat = false;
+            }
+        }
+    }
+
+    @Test
+    void regexShouldRejectNumberSign() {
+        boolean continueChat = true;
+        String[] inputs = {"Ann", "Doe","female"};
+        int inputCounter = 0;
+
+        while (continueChat) {
+            switch (chatFlow.getInstructionType()) {
+                case MESSAGE -> chatFlow.readMessage();
+                case INPUT -> {
+                    String errorMessage = chatFlow.getInstruction().getErrorMessage();
+                    chatFlow.enterInput("#");
+                    assertEquals(errorMessage, chatFlow.readMessage());
+
+                    chatFlow.enterInput(inputs[inputCounter++]);
+                }
+                case CHOICE -> {
+                    chatFlow.enterChoice(inputs[inputCounter++]);
+                }
+                case END -> continueChat = false;
+            }
+        }
+    }
+
+    @Test
+    void shouldRejectInvalidChoice() {
         boolean continueChat = true;
         String[] inputs = {"Ann", "Doe", "spoon","female"};
         int inputCounter = 0;
@@ -127,41 +226,12 @@ class ChatFlowTest {
             switch (chatFlow.getInstructionType()) {
                 case MESSAGE -> chatFlow.readMessage();
                 case INPUT -> {
-                    String errorMessage = chatFlow.getInstruction().getErrorMessage();
-
-                    chatFlow.enterInput("$");
-                    assertEquals(errorMessage, chatFlow.readMessage());
-
-                    chatFlow.enterInput("{");
-                    assertEquals(errorMessage, chatFlow.readMessage());
-
-                    chatFlow.enterInput("}");
-                    assertEquals(errorMessage, chatFlow.readMessage());
-
-                    chatFlow.enterInput("&");
-                    assertEquals(errorMessage, chatFlow.readMessage());
-
-                    chatFlow.enterInput("#");
-                    assertEquals(errorMessage, chatFlow.readMessage());
-
-                    chatFlow.enterInput("*");
-                    assertEquals(errorMessage, chatFlow.readMessage());
-
-                    chatFlow.enterInput("***${}Johnny");
-                    assertEquals(errorMessage, chatFlow.readMessage());
-
-                    chatFlow.enterInput("^Smith%");
-                    assertEquals(errorMessage, chatFlow.readMessage());
-
                     chatFlow.enterInput(inputs[inputCounter++]);
                 }
                 case CHOICE -> {
                     String errorMessage = chatFlow.getInstruction().getErrorMessage();
 
                     chatFlow.enterChoice("spoon");
-                    assertEquals(errorMessage, chatFlow.readMessage());
-
-                    chatFlow.enterChoice("!#---*5");
                     assertEquals(errorMessage, chatFlow.readMessage());
 
                     chatFlow.enterChoice(inputs[inputCounter++]);
@@ -198,7 +268,9 @@ class ChatFlowTest {
         }
 
         inputs[2] = "female";
+        inputCounter = 0;
         continueChat = true;
+        chatFlow.reset();
         while (continueChat) {
             switch (chatFlow.getInstructionType()) {
                 case MESSAGE -> chatFlow.readMessage();

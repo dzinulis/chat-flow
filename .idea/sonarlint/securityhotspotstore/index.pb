@@ -25,3 +25,5 @@ o
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 ]
 -src/main/java/lv/raitiss/InstructionType.java,6/a/6ade6b6b0fdc7a92f65cbc14420ed94e383e5cf0
+l
+<src/test/java/lv/raitiss/ChatFlowExampleInstructionTest.java,9/2/9229d943ff1aa90b8d59fbd844253fc97376b9a2

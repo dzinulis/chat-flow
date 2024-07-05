@@ -132,4 +132,8 @@ public class ChatFlow {
     public ChatInstruction getInstruction() {
         return this.instruction;
     }
+
+    public void reset() {
+        this.instruction = chatInstructions.getFirst();
+    }
 }
