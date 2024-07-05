@@ -26,7 +26,7 @@ in the ```ChatFlow``` constructor. An example file can be found in ```./src/main
 
 The list of instructions is validated to ensure that each instruction contains the required member variables, that all placeholders have corresponding inputs and that the list contains an ```END``` instruction;
 
-After executing the ```readMessage```, ```enterInput``` or ```enterChoice``` method, the ```ChatFlow``` object reads the next instruction in the tree.
+After executing the ```readMessage```, ```enterInput``` or ```enterChoice``` method, the ```ChatFlow``` object reads the next instruction in the tree. The ```reset``` method makes the ```ChatFlow``` object return to the first instruction in the list.
 
 The ```ChatFlowTerminalRunner``` class takes a ```ChatFlow``` object as an argument, and the ```run``` method loops through all the instructions in the list of the ```ChatFlow``` object until an ```END``` instruction is reached.
 
