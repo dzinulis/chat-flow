@@ -1,0 +1,14 @@
+
+
+java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Æ—î“üÿÿÿÿ8±ı›ï‡2
+
+java:S1319‘"jThe type of "userVariables" should be an interface such as "Map" rather than the implementation "HashMap".(Ó–û˜ùÿÿÿÿ8²ı›ï‡2
+>
+java:S6205*"Remove this redundant block.(‹ÓØÄÿÿÿÿÿ8Ùı›ï‡2
+L	java:S106+"+Replace this use of System.out by a logger.(–¾À›ıÿÿÿÿ8Ùı›ï‡2
+>
+java:S6205-"Remove this redundant block.(ã—úÿÿÿÿÿ8Úı›ï‡2
+>
+java:S62050"Remove this redundant block.(ı‰Ùäÿÿÿÿÿ8Úı›ï‡2
+>
+java:S62053"Remove this redundant block.(³ğ÷äúÿÿÿÿ8Ûı›ï‡2

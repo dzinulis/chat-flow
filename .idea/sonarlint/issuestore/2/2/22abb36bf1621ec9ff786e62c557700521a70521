@@ -1,0 +1,10 @@
+
+¯
+java:S1319M"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(æ†v8ÎéÃò‡2J$414db40a-1e22-4d4d-8c76-f76ea8021c81
+¬
+java:S1319Q"dThe type of "choices" should be an interface such as "Map" rather than the implementation "HashMap".(’ú×Œşÿÿÿÿ8ÙéÃò‡2J$e1b771ce-7425-48a1-9500-d998bc128185
+•
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ˆşó¾8…êÃò‡2J$7351cc73-3637-4df4-9930-e7c25dc940b9
+
+java:S1871""LThis branch's code block is the same as the block for the branch on line 33.(’®¡£8­êÃò‡2J$b0290346-2766-4b02-9f87-107e9e291659
+p	java:S108$")Either remove or fill this block of code.(³ğ÷äúÿÿÿÿ8­êÃò‡2J$39899d1c-275f-40ee-82e9-684135b1980a

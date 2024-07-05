@@ -1,0 +1,8 @@
+
+µ
+java:S1319|"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Æ—î“üÿÿÿÿ8í‰§ô‡2J$b254b116-1e8f-46a6-b045-d002d18273fd
+š
+java:S3776@"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(–É‰’ùÿÿÿÿ8‹Š§ô‡2J$082b3c30-ddc0-466d-bdbd-66e6328f82f5
+p	java:S108P")Either remove or fill this block of code.(ˆïÒüÿÿÿÿÿ8Š§ô‡2J$7538576f-e089-486d-9d33-59d62d1c3703
+
+java:S6916S"7Replace this "if" statement with a pattern match guard.(÷äšŒÿÿÿÿÿ8Š§ô‡2J$af3b90c9-0776-4228-a8a1-31454de3f343

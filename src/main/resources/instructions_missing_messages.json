@@ -1,0 +1,24 @@
+[
+  {
+    "id": 0,
+    "type": "MESSAGE",
+    "nextId" : 1
+  },
+  {
+    "id": 1,
+    "type": "INPUT",
+    "inputVariable": "firstName",
+    "nextId" : 2,
+    "inputRegex" : "[\\p{L} '-–—]*+",
+    "errorMessage" : "Something's wrong. Can you please type your first name again?"
+  },
+  {
+    "id": 2,
+    "type": "MESSAGE",
+    "nextId" : 3
+  },
+  {
+    "id": 4,
+    "type": "END"
+  }
+]
