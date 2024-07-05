@@ -31,4 +31,6 @@ The ```ChatFlowTerminalRunner``` class takes a ```ChatFlow``` object as an argum
 ## Example decision tree
 
 The following picture illustrates the example decision tree found in ```./src/main/resources/instructions_example.json```:
-![example decision tree](instructions_example.png)
+<p align="center">
+<img src="https://github.com/dzinulis/chat-flow/blob/master/instructions_example.png" width=50% height=50%>
+</p>
